@@ -147,3 +147,19 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   })();
 });
+
+
+//Subjects
+ const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+  const navLinks = document.querySelectorAll(".filter-tabs a");
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href").toLowerCase();
+    if (currentPage === "" && href.includes("gallery.html")) {
+      link.classList.add("active");
+    } else if (currentPage === href) {
+      link.classList.add("active");
+    }
+  });
+
+/*--Gallery zoom modal--*/
