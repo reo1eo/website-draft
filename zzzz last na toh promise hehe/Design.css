@@ -394,3 +394,25 @@ section .home-content .highlight {
 .contact-card p a:hover {
     text-decoration: underline;
 }
+.cute-cat {
+  width: 200px; 
+  height: auto; 
+  border-radius: 50%; 
+  box-shadow: 0 4px 8px rgb(255, 255, 255); 
+  position: absolute; 
+  top: 20px; 
+  right: 20px; 
+  transition: transform 0.3s ease; 
+  animation: bounce 2s infinite;
+  background: white;
+}
+
+.cute-cat:hover {
+  transform: scale(1.1); 
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
