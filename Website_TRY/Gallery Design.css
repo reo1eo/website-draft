@@ -1,0 +1,270 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(Fonts/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(Fonts/Poppins-Regular.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  justify-content: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-image: url(Photos/Picture.png);
+  background-color: rgba(0, 0, 0, 0.95);
+  overflow-x: hidden;
+}
+
+/* Nav Bar */
+nav {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: transparent;
+  padding: 1.5rem 0;
+  z-index: 300;
+  transition: top 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+nav.scrolled {
+  top: 0;
+  padding: 1.5rem 0;
+  background: rgba(2, 23, 13, 0.95);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  z-index: 400;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  position: relative;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  padding: 0.25rem 0.5rem;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transform-origin: center;
+  width: 100%;
+  height: 3px;
+  background: gold;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  transform: translateX(-50%) scale(1);
+}
+
+nav ul li a.active::after {
+  transform: translateX(-50%) scale(1);
+}
+
+nav ul li a:hover {
+  color: goldenrod;
+}
+
+nav ul li a.active {
+  color: gold;
+}
+
+/* Gallery Section */
+.gallery-section {
+  margin-top: 150px;
+  padding: 2rem;
+}
+
+/* Filters */
+.filter-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.filter {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter:hover {
+  background-color: gold;
+  color: black;
+  border-color: gold;
+}
+
+.filter.active {
+  background-color: gold;
+  color: black;
+  border-color: gold;
+}
+
+.filter a,
+.filter a:link,
+.filter a:visited {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.filter a:hover,
+.filter a:focus {
+  color: #012101;
+  text-decoration: none;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.6);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 1rem;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.zoom-in {
+  opacity: 1;
+}
+
+.modal-content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.modal.zoom-in .modal-content img {
+  transform: scale(1);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close:hover {
+  color: #bbb;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+body.modal-open {
+  overflow: hidden;
+}

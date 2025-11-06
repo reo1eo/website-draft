@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | FEU Freshman Memories</title>
+    <link rel="stylesheet" href="Gallery Design.css" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header class="navbar">
+      <nav>
+        <ul>
+          <li><a href="website.html">Home</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <!-- Filter buttons -->
+      <div class="filter-menu">
+        <button class="filter" data data-filter="all">
+          <a href="Gallery.html">All</a>
+        </button>
+        <button class="filter active" data-filter="Purposive Communication">
+          <a href="Purposive.html"> Purposive Communication</a>
+        </button>
+        <button class="filter" data-filter="pathfit">
+          <a href=""></a>PATHFIT
+        </button>
+        <button class="filter" data-filter="nstp">NSTP</button>
+        <button class="filter" data-filter="feur">FEUR Events</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="communication">
+          <img
+            src="FEUR/photo_6057630224154823544_y.jpg"
+            alt="Cybercrime Seminar"
+          />
+          <div class="overlay">Cybercrime Prevention & Anti-Hazing Seminar</div>
+        </div>
+
+        <div class="gallery-item" data-category="pathfit">
+          <img
+            src="FEUR/photo_6057630224154823547_y.jpg"
+            alt="PATHFIT Activity"
+          />
+          <div class="overlay">PATHFIT Performance</div>
+        </div>
+
+        <div class="gallery-item" data-category="feur">
+          <img src="FEUR/photo_6057630224154823544_y.jpg" alt="FEUR Event" />
+          <div class="overlay">FEUR Day Event</div>
+        </div>
+
+        <!-- You can add more photos like this -->
+        <div class="gallery-item" data-category="feur">
+          <img src="FEUR/photo_6057630224154823548_y.jpg" alt="Another Event" />
+          <div class="overlay">FEUR Celebration</div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="Gallery.js"></script>
+  </body>
+</html>
