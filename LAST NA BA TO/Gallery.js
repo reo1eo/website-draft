@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const doc = parser.parseFromString(html, "text/html");
         const items = doc.querySelectorAll(".gallery-item");
         items.forEach(item => galleryGrid.appendChild(item.cloneNode(true)));
-
         galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
       } catch (err) {
         console.error(`Failed to load ${subject}:`, err);
@@ -43,15 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== Modal functions for full-screen images & videos with zoom =====
+  // ===== Modal functions for full-screen images/videos with overlay text =====
   const openModal = (item) => {
     galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
     currentIndex = galleryItems.indexOf(item);
 
-    modalContent.querySelectorAll("img, video").forEach(el => el.remove());
+    // Clear previous content
+    modalContent.innerHTML = "";
 
     const img = item.querySelector("img");
     const video = item.querySelector("video");
+    const overlay = item.querySelector(".overlay");
 
     if (img) {
       const modalImg = document.createElement("img");
@@ -59,9 +60,22 @@ document.addEventListener("DOMContentLoaded", () => {
       modalImg.style.width = "100vw";
       modalImg.style.height = "100vh";
       modalImg.style.objectFit = "contain";
-      modalImg.style.transition = "transform 0.6s ease"; // smooth zoom
-      modalImg.style.transform = "scale(1.1)"; // auto zoom
+      modalImg.style.transition = "transform 0.6s ease";
+      modalImg.style.transform = "scale(1.1)";
       modalContent.appendChild(modalImg);
+
+      if (overlay) {
+        const modalOverlay = overlay.cloneNode(true);
+        modalOverlay.style.position = "absolute";
+        modalOverlay.style.top = "20px";
+        modalOverlay.style.left = "50%";
+        modalOverlay.style.transform = "translateX(-50%)";
+        modalOverlay.style.fontSize = "2rem";
+        modalOverlay.style.background = "rgba(0,0,0,0.5)";
+        modalOverlay.style.padding = "0.5rem 1rem";
+        modalOverlay.style.borderRadius = "10px";
+        modalContent.appendChild(modalOverlay);
+      }
     } else if (video) {
       const modalVideo = document.createElement("video");
       modalVideo.src = video.src;
@@ -73,6 +87,19 @@ document.addEventListener("DOMContentLoaded", () => {
       modalVideo.style.height = "100vh";
       modalVideo.style.objectFit = "contain";
       modalContent.appendChild(modalVideo);
+
+      if (overlay) {
+        const modalOverlay = overlay.cloneNode(true);
+        modalOverlay.style.position = "absolute";
+        modalOverlay.style.top = "20px";
+        modalOverlay.style.left = "50%";
+        modalOverlay.style.transform = "translateX(-50%)";
+        modalOverlay.style.fontSize = "2rem";
+        modalOverlay.style.background = "rgba(0,0,0,0.5)";
+        modalOverlay.style.padding = "0.5rem 1rem";
+        modalOverlay.style.borderRadius = "10px";
+        modalContent.appendChild(modalOverlay);
+      }
     }
 
     modal.classList.add("show");
