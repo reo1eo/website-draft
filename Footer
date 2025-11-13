@@ -1,0 +1,184 @@
+HTML 
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Left section -->
+    <div class="footer-brand">
+      <h3>FEU Freshman Memories</h3>
+      <p>A gallery that captures the journey, laughter, and friendships of our first year at FEU.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Middle section -->
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="website.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Right section -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><a href="mailto:jefflynlamila@gmail.com">jefflynfaithlamila@gmail.com</a></p>
+      <p><a href="mailto:ayajimenez523@gmail.com">ayajimenez523@gmail.com</a></p>
+      <p><a href="mailto:gibsongonzales09@gmail.com">gibsongonzales09@gmail.com</a></p>
+      <p><a href="mailto:quibetejianbert@gmail.com">juibetejianbert@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <img src="Logo.png" alt="JAG Logo" class="footer-logo" />
+    <p>© 2025 FEU Freshman Memories. Designed by <strong>JAG</strong>.</p>
+  </div>
+</footer>
+
+CSS
+/* =========================
+   FOOTER SECTION
+   ========================= */
+footer {
+  background-color: #012101;
+  color: #f5f5f5;
+  padding: 3rem 2rem;
+  border-top: 3px solid gold;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Main layout */
+footer {
+  background-color: #012101;
+  color: #f5f5f5;
+  padding: 3rem 2rem;
+  border-top: 3px solid gold;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Layout container */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* ensures even top alignment */
+  gap: 8rem; /* balanced spacing */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Each column */
+.footer-brand,
+.footer-links,
+.footer-contact {
+  flex: 1 1 300px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Title styles */
+.footer-brand h3,
+.footer-links h4,
+.footer-contact h4 {
+  color: gold;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Description text */
+.footer-brand p {
+  color: #d9d9d9;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Social Icons */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-socials a {
+  text-decoration: none;
+  color: #012101;
+  background-color: gold;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background-color: #f5f5f5;
+  color: #012101;
+}
+
+/* Explore Links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 0.5rem 0;
+}
+
+.footer-links a {
+  color: #d9d9d9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: gold;
+}
+
+/* Contact Section */
+.footer-contact p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-contact a {
+  color: gold;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom part */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1.5rem;
+}
+
+.footer-logo {
+  width: 55px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+strong {
+  color: gold;
+}
